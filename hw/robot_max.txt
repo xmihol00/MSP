@@ -1,0 +1,20 @@
+var h >= 0;
+var m >= 0;
+var l >= 0;
+
+minimize z: h + m + l;
+
+subject to h_dock:  h >= 0.8*h + 0.2*m;
+subject to h_clean: h >= 0.4*h + 0.4*m + 0.2;
+
+subject to m_dock:  m >= 0.8*h + 0.2*l;
+subject to m_clean: m >= 0.4*m + 0.4*l + 0.2;
+
+subject to l_dock:  l >= 0.8*h;
+subject to l_clean: l >= 0.4*l + 0.2;
+
+subject to ph: h <= 1;
+subject to pm: m <= 1;
+subject to pl: l <= 1;
+
+end;
